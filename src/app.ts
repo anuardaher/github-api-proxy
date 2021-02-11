@@ -4,7 +4,7 @@ import { HandlerController } from './controllers/signup/signup'
 import { UserServices } from './services/users'
 
 const app = express()
-const port = 3000
+const port = process.env.PORT ?? 3000
 
 const makeHandler = (): HandlerController => {
   const userServices = new UserServices()
