@@ -14,7 +14,7 @@ const makeUserHandler = (): HandlerController => {
 
 const userHandler = makeUserHandler()
 
-app.get('/', (req, res) => res.send('Shaw and Partners Github API'))
+app.get('/', (req, res) => res.send('Github API'))
 
 app.get('/api/users', async (req, res) => {
   const { statusCode, body } = await userHandler.listAll(req)
@@ -32,5 +32,5 @@ app.get('/api/users/:username/repos', async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`)
+  console.log(`Hosting at @${port}`)
 })
