@@ -1,5 +1,5 @@
 import { badRequest, serverError, ok } from '../../helpers/http-helper'
-import { Controller, httpRequest, httpResponse } from './signup-protocols'
+import { Controller, httpRequest, httpResponse } from './user-protocols'
 import { InvalidParamError } from '../../errors'
 import parse from 'parse-link-header'
 

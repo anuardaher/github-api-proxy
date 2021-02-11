@@ -1,4 +1,4 @@
-import { HandlerController } from './signup'
+import { HandlerController } from './user'
 import { InvalidParamError } from '../../errors'
 import { UserServices } from '../../services/users'
 import { UserServicesInterface } from '../../protocols'

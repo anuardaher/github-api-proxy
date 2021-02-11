@@ -1,5 +1,5 @@
 {
-  "name": "clean-node-api",
+  "name": "github-proxy-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:ci": "npm test -- --coverage",
-    "start": "nodemon src/app.ts"
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
