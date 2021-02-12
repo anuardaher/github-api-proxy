@@ -6,6 +6,13 @@ import { UserServices } from './services/users'
 const app = express()
 const port = process.env.PORT ?? 3000
 
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET')
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+  next()
+})
+
 const makeUserHandler = (): HandlerController => {
   const userServices = new UserServices()
   const userHandler = new HandlerController(userServices)
