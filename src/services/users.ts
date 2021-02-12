@@ -21,6 +21,6 @@ export class UserServices implements UserServicesInterface {
   }
 
   async repositories (username: string): Promise<any> {
-    return this.service.get(`/${username}/repos/`)
+    return this.service.get(`/${username}/repos`)
   }
 }
