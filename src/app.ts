@@ -21,7 +21,11 @@ const makeUserHandler = (): HandlerController => {
 
 const userHandler = makeUserHandler()
 
-app.get('/', (req, res) => res.send('Github API'))
+app.get('/', (req, res) => {
+  res.send(`<h1> Github API Proxy </h1>
+  <h3> Available Routes </h3> 
+  ${availableRoutes().toString().replace(/,/g, '')}`)
+})
 
 app.get('/api/users', async (req, res) => {
   const { statusCode, body } = await userHandler.listAll(req)
@@ -41,3 +45,12 @@ app.get('/api/users/:username/repos', async (req, res) => {
 app.listen(port, () => {
   console.log(`Hosting at @${port}`)
 })
+
+const availableRoutes = (): string[] => {
+  return app._router.stack
+    .filter((r) => r.route?.path)
+    .map((r) => {
+      const path: string = r.route.path
+      return `<p>${path}</p>`
+    })
+}
